@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sidex – Performance parts for drift and track cars</title>
+<meta name="description" content="Suspension, exhaust, brakes, wheels and engine parts for Nissan, BMW, Toyota, Mazda and Honda. Shop by car.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,800;1,800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --concrete: #E9EBEE;
+    --panel: #FFFFFF;
+    --ink: #16191D;
+    --ink-2: #4B5158;
+    --ink-3: #8A9098;
+    --line: #CFD3D8;
+    --orange: #F04E23;
+    --orange-deep: #C93B12;
+    --steel: #2B4C7E;
+    --steel-wash: #E4EAF3;
+    --ok: #1F7A4D;
+    --display: "Barlow Condensed", "Arial Narrow", sans-serif;
+    --body: "Barlow", "Helvetica Neue", Arial, sans-serif;
+    --r: 4px;
+    --max: 1200px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--concrete); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.5; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; cursor: pointer; }
+  img { display: block; max-width: 100%; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 800; line-height: 1; margin: 0; letter-spacing: -0.01em; }
+  h1 { font-size: clamp(44px, 7vw, 84px); }
+  h2 { font-size: clamp(30px, 4vw, 44px); }
+  h3 { font-size: 24px; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+  :focus-visible { outline: 3px solid var(--steel); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
+
+  /* Header */
+  .topline { background: var(--ink); color: #fff; font-size: 13px; }
+  .topline .wrap { display: flex; justify-content: space-between; gap: 16px; padding: 6px 20px; }
+  .topline span + span { color: #B7BCC3; }
+  header.main { background: var(--panel); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 30; }
+  header.main .wrap { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px; height: 68px; }
+  .logo { font-family: var(--display); font-weight: 800; font-style: italic; font-size: 34px; letter-spacing: 0.02em; display: flex; align-items: center; gap: 8px; }
+  .logo b { display: inline-block; width: 14px; height: 30px; background: var(--orange); transform: skewX(-14deg); }
+  .search { display: flex; border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; max-width: 520px; }
+  .search input { flex: 1; border: 0; padding: 10px 14px; font: inherit; min-width: 0; }
+  .search button { border: 0; background: var(--ink); color: #fff; padding: 0 16px; font-weight: 600; }
+  .cart-btn { display: flex; align-items: center; gap: 10px; background: none; border: 1px solid var(--line); border-radius: var(--r); padding: 9px 14px; font-weight: 600; }
+  .cart-btn .count { background: var(--orange); color: #fff; min-width: 24px; height: 24px; border-radius: 12px; display: inline-grid; place-items: center; font-size: 13px; padding: 0 6px; }
+  nav.cats { background: var(--panel); border-bottom: 1px solid var(--line); }
+  nav.cats .wrap { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; }
+  nav.cats a { padding: 12px 14px; font-weight: 600; white-space: nowrap; border-bottom: 3px solid transparent; }
+  nav.cats a.on, nav.cats a:hover { border-bottom-color: var(--orange); }
+
+  /* Hero: shop by car */
+  .hero { padding: 48px 0 40px; }
+  .hero .wrap { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: end; }
+  .hero p.lede { font-size: 18px; color: var(--ink-2); max-width: 46ch; margin: 16px 0 0; }
+  .finder { background: var(--ink); color: #fff; padding: 24px; border-radius: var(--r); border-left: 8px solid var(--orange); }
+  .finder h2 { font-size: 30px; }
+  .finder .row { display: grid; grid-template-columns: 1fr 1fr auto; gap: 10px; margin-top: 16px; }
+  .finder select { padding: 12px; border-radius: var(--r); border: 1px solid #3A4048; background: #22272D; color: #fff; font: inherit; }
+  .finder select:disabled { color: #6B727A; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: var(--r); border: 0; font-weight: 600; background: var(--orange); color: #fff; transition: background .15s; }
+  .btn:hover { background: var(--orange-deep); }
+  .btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+  .btn.ghost:hover { background: #fff; }
+  .btn[disabled] { opacity: .5; cursor: not-allowed; }
+
+  /* Category tiles */
+  .tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; padding-bottom: 40px; }
+  .tile { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 18px 16px; transition: border-color .15s; }
+  .tile:hover { border-color: var(--ink); }
+  .tile h3 { font-size: 22px; }
+  .tile p { margin: 4px 0 0; color: var(--ink-3); font-size: 14px; }
+
+  /* Catalogue */
+  .catalogue { display: grid; grid-template-columns: 240px 1fr; gap: 28px; padding: 24px 0 60px; }
+  .filters { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 18px; align-self: start; position: sticky; top: 84px; }
+  .filters h3 { font-size: 20px; margin-bottom: 10px; }
+  .filters .group + .group { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); }
+  .filters label { display: flex; align-items: center; gap: 8px; padding: 4px 0; cursor: pointer; }
+  .filters .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { background: var(--steel-wash); color: var(--steel); border-radius: 999px; padding: 3px 10px; font-size: 13px; font-weight: 600; display: inline-flex; gap: 6px; align-items: center; }
+  .chip button { border: 0; background: none; color: inherit; padding: 0; font-size: 16px; line-height: 1; }
+  .results-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 14px; flex-wrap: wrap; }
+  .results-head p { margin: 0; color: var(--ink-2); }
+  .results-head select { padding: 8px 10px; border: 1px solid var(--line); border-radius: var(--r); background: #fff; font: inherit; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 16px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; display: flex; flex-direction: column; }
+  .card a.img { background: #DCDFE3; aspect-ratio: 1; display: block; }
+  .card a.img img { width: 100%; height: 100%; object-fit: cover; }
+  .card .body { padding: 14px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+  .card .brand { font-size: 13px; color: var(--ink-3); font-weight: 600; }
+  .card h3 { font-size: 21px; }
+  .card .fit { font-size: 13px; color: var(--steel); font-weight: 500; }
+  .card .foot { margin-top: auto; display: flex; justify-content: space-between; align-items: center; padding-top: 10px; }
+  .price { font-family: var(--display); font-weight: 800; font-size: 26px; }
+  .price small { font-family: var(--body); font-weight: 400; font-size: 13px; color: var(--ink-3); margin-left: 4px; }
+  .low { color: var(--orange-deep); font-size: 13px; font-weight: 600; }
+  .empty { background: var(--panel); border: 1px dashed var(--line); padding: 40px; text-align: center; border-radius: var(--r); color: var(--ink-2); }
+
+  /* Product page */
+  .crumbs { font-size: 14px; color: var(--ink-3); padding: 18px 0 0; }
+  .crumbs a:hover { color: var(--ink); }
+  .product { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 20px 0 60px; }
+  .product .gallery { background: #DCDFE3; border-radius: var(--r); aspect-ratio: 1; overflow: hidden; }
+  .product .gallery img { width: 100%; height: 100%; object-fit: cover; }
+  .product h1 { font-size: clamp(34px, 4.5vw, 52px); }
+  .product .brand { font-weight: 600; color: var(--ink-3); }
+  .product .sku { font-size: 13px; color: var(--ink-3); }
+  .product .fits { margin: 18px 0; padding: 14px 16px; background: var(--steel-wash); border-left: 4px solid var(--steel); border-radius: var(--r); }
+  .product .fits strong { color: var(--steel); }
+  .product .fits ul { margin: 6px 0 0; padding-left: 18px; }
+  .product .buy { display: flex; align-items: center; gap: 14px; margin: 20px 0; flex-wrap: wrap; }
+  .product .buy .price { font-size: 40px; }
+  .qty { display: inline-flex; border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
+  .qty button { width: 38px; border: 0; background: #fff; font-size: 18px; }
+  .qty input { width: 48px; text-align: center; border: 0; border-left: 1px solid var(--line); border-right: 1px solid var(--line); font: inherit; }
+  .specs { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 15px; }
+  .specs th, .specs td { text-align: left; padding: 9px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .specs th { color: var(--ink-2); font-weight: 500; width: 40%; }
+  .stock-ok { color: var(--ok); font-weight: 600; }
+
+  /* Cart drawer */
+  .scrim { position: fixed; inset: 0; background: rgba(22,25,29,.5); z-index: 40; opacity: 0; pointer-events: none; transition: opacity .2s; }
+  .drawer { position: fixed; top: 0; right: 0; height: 100%; width: min(440px, 100%); background: var(--panel); z-index: 50; transform: translateX(100%); transition: transform .25s; display: flex; flex-direction: column; box-shadow: -8px 0 30px rgba(0,0,0,.15); }
+  body.cart-open .scrim { opacity: 1; pointer-events: auto; }
+  body.cart-open .drawer { transform: none; }
+  .drawer header { display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; border-bottom: 1px solid var(--line); }
+  .drawer header h2 { font-size: 30px; }
+  .drawer .close { border: 0; background: none; font-size: 26px; line-height: 1; }
+  .drawer .items { flex: 1; overflow-y: auto; padding: 8px 20px; }
+  .line { display: grid; grid-template-columns: 64px 1fr auto; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+  .line img { width: 64px; height: 64px; object-fit: cover; border-radius: var(--r); background: #DCDFE3; }
+  .line .name { font-weight: 600; }
+  .line .meta { font-size: 13px; color: var(--ink-3); }
+  .line .remove { border: 0; background: none; color: var(--ink-3); font-size: 13px; padding: 0; text-decoration: underline; margin-top: 4px; }
+  .line .right { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+  .drawer footer { padding: 18px 20px 24px; border-top: 1px solid var(--line); }
+  .totals { display: flex; justify-content: space-between; margin-bottom: 4px; }
+  .totals.grand { font-family: var(--display); font-weight: 800; font-size: 26px; margin: 8px 0 14px; }
+  .drawer footer .btn { width: 100%; }
+  .drawer footer p.note { font-size: 13px; color: var(--ink-3); margin: 10px 0 0; }
+  .toast { position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 20px); background: var(--ink); color: #fff; padding: 12px 18px; border-radius: var(--r); opacity: 0; transition: .2s; z-index: 60; pointer-events: none; }
+  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+  /* Footer */
+  footer.site { background: var(--ink); color: #B7BCC3; padding: 40px 0; margin-top: 20px; font-size: 14px; }
+  footer.site .wrap { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 30px; }
+  footer.site h3 { color: #fff; font-size: 20px; margin-bottom: 8px; }
+  footer.site a { display: block; padding: 3px 0; }
+  footer.site a:hover { color: #fff; }
+
+  @media (max-width: 900px) {
+    header.main .wrap { grid-template-columns: auto 1fr auto; gap: 12px; }
+    .search { display: none; }
+    .hero .wrap, .product { grid-template-columns: 1fr; }
+    .catalogue { grid-template-columns: 1fr; }
+    .filters { position: static; }
+    .finder .row { grid-template-columns: 1fr; }
+    footer.site .wrap { grid-template-columns: 1fr; }
+    .topline .wrap span:last-child { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topline"><div class="wrap"><span>Free UK delivery over £150</span><span>Test store: no real orders are taken</span></div></div>
+
+<header class="main">
+  <div class="wrap">
+    <a class="logo" href="#/"><b></b>SIDEX</a>
+    <form class="search" id="searchForm" role="search">
+      <input id="searchInput" type="search" placeholder="Search parts, brands or cars" aria-label="Search">
+      <button type="submit">Search</button>
+    </form>
+    <button class="cart-btn" id="cartBtn" aria-label="Open cart">Cart <span class="count" id="cartCount">0</span></button>
+  </div>
+</header>
+<nav class="cats" id="catNav"><div class="wrap"></div></nav>
+
+<main id="app"></main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <h3>Sidex</h3>
+      <p>Performance parts for drift and track cars. This is a demonstration store built to show how an online shop works; the brands, parts and prices are fictional.</p>
+    </div>
+    <div>
+      <h3>Shop</h3>
+      <div id="footCats"></div>
+    </div>
+    <div>
+      <h3>Help</h3>
+      <a href="#/">Delivery</a>
+      <a href="#/">Returns</a>
+      <a href="#/">Fitting guides</a>
+      <a href="#/">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Shopping cart">
+  <header><h2>Your cart</h2><button class="close" id="closeCart" aria-label="Close cart">×</button></header>
+  <div class="items" id="cartItems"></div>
+  <footer>
+    <div class="totals"><span>Subtotal</span><span id="subtotal">£0.00</span></div>
+    <div class="totals"><span>Delivery</span><span id="delivery">£0.00</span></div>
+    <div class="totals grand"><span>Total</span><span id="total">£0.00</span></div>
+    <button class="btn" id="checkoutBtn">Go to checkout</button>
+    <p class="note">Checkout opens Stripe in test mode. Use card 4242 4242 4242 4242 with any future date and any CVC.</p>
+  </footer>
+</aside>
+<div class="toast" id="toast"></div>
+
+<script>
+(() => {
+  const app = document.getElementById('app');
+  let DATA = null;
+  const cart = new Map(); // id -> qty (in memory for the session)
+  const fmt = n => '£' + n.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+  const FREE_DELIVERY_OVER = 150, DELIVERY = 6.95;
+
+  // ---------- Data ----------
+  async function load() {
+    const res = await fetch('products.json');
+    DATA = await res.json();
+    DATA.categories.forEach(c => c.count = DATA.products.filter(p => p.category === c.slug).length);
+    renderNav();
+    route();
+  }
+
+  function renderNav() {
+    const nav = document.querySelector('#catNav .wrap');
+    nav.innerHTML = `<a href="#/">Home</a>` + DATA.categories.map(c => `<a href="#/category/${c.slug}" data-cat="${c.slug}">${esc(c.name)}</a>`).join('');
+    document.getElementById('footCats').innerHTML = DATA.categories.map(c => `<a href="#/category/${c.slug}">${esc(c.name)}</a>`).join('');
+  }
+
+  // ---------- Router ----------
+  function route() {
+    const hash = location.hash.replace(/^#\/?/, '');
+    const [view, a, b] = hash.split('/').map(decodeURIComponent);
+    document.querySelectorAll('#catNav a').forEach(el => el.classList.toggle('on', view === 'category' && el.dataset.cat === a));
+    window.scrollTo({ top: 0 });
+    if (view === 'product') return renderProduct(a);
+    if (view === 'category') return renderCatalogue({ category: a });
+    if (view === 'car') return renderCatalogue({ make: a, model: b });
+    if (view === 'search') return renderCatalogue({ q: a });
+    if (view === 'thanks') return renderThanks();
+    renderHome();
+  }
+  window.addEventListener('hashchange', route);
+
+  // ---------- Home ----------
+  function renderHome() {
+    const makes = DATA.cars.map(c => `<option value="${esc(c.make)}">${esc(c.make)}</option>`).join('');
+    app.innerHTML = `
+      <section class="hero"><div class="wrap">
+        <div>
+          <h1>Parts that fit.<br>First time.</h1>
+          <p class="lede">Every part on Sidex is listed against the exact cars it fits, so you never order twice. Pick your car and we'll only show you what bolts on.</p>
+        </div>
+        <div class="finder">
+          <h2>Shop by car</h2>
+          <div class="row">
+            <select id="mk" aria-label="Make"><option value="">Make</option>${makes}</select>
+            <select id="md" aria-label="Model" disabled><option value="">Model</option></select>
+            <button class="btn" id="findBtn" disabled>Find parts</button>
+          </div>
+        </div>
+      </div></section>
+      <section class="wrap"><div class="tiles">
+        ${DATA.categories.map(c => `<a class="tile" href="#/category/${c.slug}"><h3>${esc(c.name)}</h3><p>${esc(c.blurb)}</p></a>`).join('')}
+      </div></section>
+      <section class="wrap" style="padding-bottom:60px">
+        <div class="results-head"><h2>New in</h2><p>${DATA.products.length} parts in stock</p></div>
+        <div class="grid">${DATA.products.slice(0, 8).map(card).join('')}</div>
+      </section>`;
+    const mk = document.getElementById('mk'), md = document.getElementById('md'), btn = document.getElementById('findBtn');
+    mk.onchange = () => {
+      const car = DATA.cars.find(c => c.make === mk.value);
+      md.innerHTML = '<option value="">Model</option>' + (car ? car.models.map(m => `<option>${esc(m)}</option>`).join('') : '');
+      md.disabled = !car; btn.disabled = true;
+    };
+    md.onchange = () => { btn.disabled = !md.value; };
+    btn.onclick = () => { location.hash = `#/car/${encodeURIComponent(mk.value)}/${encodeURIComponent(md.value)}`; };
+  }
+
+  // ---------- Catalogue ----------
+  function card(p) {
+    const fits = p.fitment.map(f => f.model).join(', ');
+    return `<article class="card">
+      <a class="img" href="#/product/${p.id}"><img src="${esc(p.image)}" alt="" loading="lazy"></a>
+      <div class="body">
+        <div class="brand">${esc(p.brand)}</div>
+        <h3><a href="#/product/${p.id}">${esc(p.name)}</a></h3>
+        <div class="fit">Fits ${esc(fits)}</div>
+        <div class="foot">
+          <div class="price">${fmt(p.price)}${p.category === 'wheels' ? '<small>each</small>' : ''}</div>
+          ${p.stock <= 3 ? `<span class="low">Only ${p.stock} left</span>` : `<button class="btn ghost" data-add="${p.id}">Add</button>`}
+        </div>
+      </div></article>`;
+  }
+
+  function renderCatalogue(f) {
+    const cat = DATA.categories.find(c => c.slug === f.category);
+    const title = cat ? cat.name : f.model ? `${f.make} ${f.model} parts` : f.q ? `Results for "${f.q}"` : 'All parts';
+    const brands = [...new Set(DATA.products.map(p => p.brand))].sort();
+    app.innerHTML = `
+      <div class="wrap"><div class="crumbs"><a href="#/">Home</a> / ${esc(title)}</div></div>
+      <div class="wrap catalogue">
+        <aside class="filters">
+          <div class="group"><h3>Category</h3>
+            ${DATA.categories.map(c => `<label><input type="checkbox" name="cat" value="${c.slug}" ${f.category === c.slug ? 'checked' : ''}> ${esc(c.name)} <span style="color:var(--ink-3);margin-left:auto">${c.count}</span></label>`).join('')}
+          </div>
+          <div class="group"><h3>Brand</h3>
+            ${brands.map(b => `<label><input type="checkbox" name="brand" value="${esc(b)}"> ${esc(b)}</label>`).join('')}
+          </div>
+          <div class="group"><h3>Car</h3>
+            <select id="fcar" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:4px;background:#fff;font:inherit">
+              <option value="">Any car</option>
+              ${DATA.cars.map(c => `<optgroup label="${esc(c.make)}">${c.models.map(m => `<option value="${esc(c.make)}|${esc(m)}" ${f.make === c.make && f.model === m ? 'selected' : ''}>${esc(m)}</option>`).join('')}</optgroup>`).join('')}
+            </select>
+          </div>
+        </aside>
+        <section>
+          <div class="results-head"><h2>${esc(title)}</h2><div><span id="rcount"></span> <select id="sort" aria-label="Sort"><option value="rel">Sort: featured</option><option value="lo">Price low to high</option><option value="hi">Price high to low</option><option value="az">Name A to Z</option></select></div></div>
+          <div class="grid" id="results"></div>
+        </section>
+      </div>`;
+    const apply = () => {
+      const cats = [...app.querySelectorAll('input[name=cat]:checked')].map(i => i.value);
+      const brs = [...app.querySelectorAll('input[name=brand]:checked')].map(i => i.value);
+      const [mk, md] = (app.querySelector('#fcar').value || '|').split('|');
+      const q = (f.q || '').toLowerCase();
+      let list = DATA.products.filter(p =>
+        (!cats.length || cats.includes(p.category)) &&
+        (!brs.length || brs.includes(p.brand)) &&
+        (!mk || p.fitment.some(x => x.make === mk && x.model === md)) &&
+        (!q || [p.name, p.brand, p.short, p.sku, ...p.fitment.map(x => x.make + ' ' + x.model)].join(' ').toLowerCase().includes(q))
+      );
+      const s = app.querySelector('#sort').value;
+      if (s === 'lo') list.sort((a, b) => a.price - b.price);
+      if (s === 'hi') list.sort((a, b) => b.price - a.price);
+      if (s === 'az') list.sort((a, b) => a.name.localeCompare(b.name));
+      app.querySelector('#rcount').textContent = `${list.length} part${list.length === 1 ? '' : 's'}`;
+      app.querySelector('#results').innerHTML = list.length ? list.map(card).join('')
+        : `<div class="empty" style="grid-column:1/-1"><strong>Nothing matches those filters.</strong><br>Try removing a filter, or pick a different car.</div>`;
+    };
+    app.querySelectorAll('input, select').forEach(el => el.addEventListener('change', apply));
+    apply();
+  }
+
+  // ---------- Product ----------
+  function renderProduct(id) {
+    const p = DATA.products.find(x => x.id === id);
+    if (!p) { app.innerHTML = `<div class="wrap"><div class="empty" style="margin:40px 0"><strong>That part doesn't exist.</strong><br><a href="#/" style="text-decoration:underline">Back to the shop</a></div></div>`; return; }
+    const cat = DATA.categories.find(c => c.slug === p.category);
+    app.innerHTML = `
+      <div class="wrap"><div class="crumbs"><a href="#/">Home</a> / <a href="#/category/${cat.slug}">${esc(cat.name)}</a> / ${esc(p.name)}</div></div>
+      <div class="wrap product">
+        <div class="gallery"><img src="${esc(p.image)}" alt="${esc(p.name)}"></div>
+        <div>
+          <div class="brand">${esc(p.brand)}</div>
+          <h1>${esc(p.name)}</h1>
+          <div class="sku">Part no. ${esc(p.sku)}</div>
+          <div class="fits"><strong>Fits</strong><ul>${p.fitment.map(f => `<li><a href="#/car/${encodeURIComponent(f.make)}/${encodeURIComponent(f.model)}">${esc(f.make)} ${esc(f.model)}</a></li>`).join('')}</ul></div>
+          <p>${esc(p.description)}</p>
+          <div class="buy">
+            <div class="price">${fmt(p.price)}${p.category === 'wheels' ? '<small>per wheel</small>' : ''}</div>
+            <div class="qty"><button id="qm" aria-label="Fewer">−</button><input id="qty" type="number" min="1" max="${p.stock}" value="1" aria-label="Quantity"><button id="qp" aria-label="More">+</button></div>
+            <button class="btn" id="addBtn">Add to cart</button>
+          </div>
+          <div class="${p.stock > 3 ? 'stock-ok' : 'low'}">${p.stock > 3 ? 'In stock, ships in 1 to 2 days' : `Only ${p.stock} left`}</div>
+          <table class="specs">${Object.entries(p.specs).map(([k, v]) => `<tr><th>${esc(k)}</th><td>${esc(v)}</td></tr>`).join('')}</table>
+        </div>
+      </div>`;
+    const q = app.querySelector('#qty');
+    app.querySelector('#qm').onclick = () => q.value = Math.max(1, +q.value - 1);
+    app.querySelector('#qp').onclick = () => q.value = Math.min(p.stock, +q.value + 1);
+    app.querySelector('#addBtn').onclick = () => add(p.id, Math.max(1, Math.min(p.stock, +q.value || 1)));
+  }
+
+  function renderThanks() {
+    app.innerHTML = `<div class="wrap" style="padding:60px 0;max-width:640px"><h1>Order placed.</h1><p style="font-size:18px;color:var(--ink-2)">Thanks, we've got it. This was a test payment so nothing has been charged and nothing will ship, but on a live store you'd get a confirmation email about now.</p><a class="btn" href="#/">Keep shopping</a></div>`;
+    cart.clear(); renderCart();
+  }
+
+  // ---------- Cart ----------
+  function add(id, qty = 1) {
+    const p = DATA.products.find(x => x.id === id);
+    cart.set(id, Math.min(p.stock, (cart.get(id) || 0) + qty));
+    renderCart(); toast(`Added ${p.name}`); openCart();
+  }
+  function renderCart() {
+    const items = [...cart.entries()].map(([id, qty]) => ({ p: DATA.products.find(x => x.id === id), qty }));
+    const sub = items.reduce((s, i) => s + i.p.price * i.qty, 0);
+    const del = items.length ? (sub >= FREE_DELIVERY_OVER ? 0 : DELIVERY) : 0;
+    document.getElementById('cartCount').textContent = items.reduce((s, i) => s + i.qty, 0);
+    document.getElementById('cartItems').innerHTML = items.length ? items.map(({ p, qty }) => `
+      <div class="line">
+        <img src="${esc(p.image)}" alt="">
+        <div><div class="name">${esc(p.name)}</div><div class="meta">${esc(p.brand)} · ${esc(p.sku)}</div><button class="remove" data-remove="${p.id}">Remove</button></div>
+        <div class="right">
+          <div class="qty"><button data-dec="${p.id}" aria-label="Fewer">−</button><input value="${qty}" readonly aria-label="Quantity"><button data-inc="${p.id}" aria-label="More">+</button></div>
+          <strong>${fmt(p.price * qty)}</strong>
+        </div>
+      </div>`).join('')
+      : `<div class="empty" style="margin:20px 0"><strong>Your cart is empty.</strong><br>Pick a car on the home page to see what fits.</div>`;
+    document.getElementById('subtotal').textContent = fmt(sub);
+    document.getElementById('delivery').textContent = del ? fmt(del) : (items.length ? 'Free' : fmt(0));
+    document.getElementById('total').textContent = fmt(sub + del);
+    document.getElementById('checkoutBtn').disabled = !items.length;
+  }
+  function openCart() { document.body.classList.add('cart-open'); }
+  function closeCart() { document.body.classList.remove('cart-open'); }
+  document.getElementById('cartBtn').onclick = openCart;
+  document.getElementById('closeCart').onclick = closeCart;
+  document.getElementById('scrim').onclick = closeCart;
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCart(); });
+
+  document.addEventListener('click', e => {
+    const t = e.target.closest('[data-add],[data-inc],[data-dec],[data-remove]');
+    if (!t) return;
+    if (t.dataset.add) add(t.dataset.add);
+    if (t.dataset.inc) add(t.dataset.inc);
+    if (t.dataset.dec) { const n = cart.get(t.dataset.dec) - 1; n > 0 ? cart.set(t.dataset.dec, n) : cart.delete(t.dataset.dec); renderCart(); }
+    if (t.dataset.remove) { cart.delete(t.dataset.remove); renderCart(); }
+  });
+
+  // ---------- Checkout ----------
+  document.getElementById('checkoutBtn').onclick = async () => {
+    const btn = document.getElementById('checkoutBtn');
+    btn.disabled = true; btn.textContent = 'Opening checkout…';
+    try {
+      const res = await fetch('/api/checkout', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items: [...cart.entries()].map(([id, qty]) => ({ id, qty })) })
+      });
+      const data = await res.json();
+      if (!res.ok || !data.url) throw new Error(data.error || 'Checkout is not set up yet');
+      location.href = data.url;
+    } catch (err) {
+      toast(err.message + '. See README for Stripe setup.');
+      btn.disabled = false; btn.textContent = 'Go to checkout';
+    }
+  };
+
+  // ---------- Search & misc ----------
+  document.getElementById('searchForm').onsubmit = e => {
+    e.preventDefault();
+    const q = document.getElementById('searchInput').value.trim();
+    if (q) location.hash = '#/search/' + encodeURIComponent(q);
+  };
+  let toastTimer;
+  function toast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg; t.classList.add('show');
+    clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('show'), 2600);
+  }
+
+  load();
+})();
+</script>
+</body>
+</html>
