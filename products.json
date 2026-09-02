@@ -1,20 +1,81 @@
 {
   "currency": "GBP",
   "cars": [
-    { "make": "Nissan", "models": ["350Z", "Silvia S15", "Skyline R34"] },
-    { "make": "BMW", "models": ["E36 3 Series", "E46 3 Series", "E90 3 Series"] },
-    { "make": "Toyota", "models": ["GT86", "Supra MK4", "Corolla AE86"] },
-    { "make": "Mazda", "models": ["MX-5 NC", "RX-7 FD"] },
-    { "make": "Honda", "models": ["Civic EK", "S2000"] }
+    {
+      "make": "Nissan",
+      "models": [
+        "350Z",
+        "Silvia S15",
+        "Skyline R34"
+      ]
+    },
+    {
+      "make": "BMW",
+      "models": [
+        "E36 3 Series",
+        "E46 3 Series",
+        "E90 3 Series"
+      ]
+    },
+    {
+      "make": "Toyota",
+      "models": [
+        "GT86",
+        "Supra MK4",
+        "Corolla AE86"
+      ]
+    },
+    {
+      "make": "Mazda",
+      "models": [
+        "MX-5 NC",
+        "RX-7 FD"
+      ]
+    },
+    {
+      "make": "Honda",
+      "models": [
+        "Civic EK",
+        "S2000"
+      ]
+    }
   ],
   "categories": [
-    { "slug": "suspension", "name": "Suspension", "blurb": "Coilovers, arms and bushes" },
-    { "slug": "exhaust", "name": "Exhaust", "blurb": "Cat-backs, manifolds and decats" },
-    { "slug": "brakes", "name": "Brakes", "blurb": "Big brake kits, pads and lines" },
-    { "slug": "wheels", "name": "Wheels", "blurb": "Flow-formed and forged" },
-    { "slug": "engine", "name": "Engine", "blurb": "Intakes, cooling and tuning" },
-    { "slug": "drivetrain", "name": "Drivetrain", "blurb": "Clutches, diffs and mounts" },
-    { "slug": "exterior", "name": "Exterior", "blurb": "Aero, bumpers and lighting" }
+    {
+      "slug": "suspension",
+      "name": "Suspension",
+      "blurb": "Coilovers, arms and bushes"
+    },
+    {
+      "slug": "exhaust",
+      "name": "Exhaust",
+      "blurb": "Cat-backs, manifolds and decats"
+    },
+    {
+      "slug": "brakes",
+      "name": "Brakes",
+      "blurb": "Big brake kits, pads and lines"
+    },
+    {
+      "slug": "wheels",
+      "name": "Wheels",
+      "blurb": "Flow-formed and forged"
+    },
+    {
+      "slug": "engine",
+      "name": "Engine",
+      "blurb": "Intakes, cooling and tuning"
+    },
+    {
+      "slug": "drivetrain",
+      "name": "Drivetrain",
+      "blurb": "Clutches, diffs and mounts"
+    },
+    {
+      "slug": "exterior",
+      "name": "Exterior",
+      "blurb": "Aero, bumpers and lighting"
+    }
   ],
   "products": [
     {
@@ -25,11 +86,21 @@
       "category": "suspension",
       "price": 749,
       "stock": 6,
-      "image": "images/coilover.svg",
-      "fitment": [{ "make": "Nissan", "model": "350Z" }],
+      "image": "images/sdx-cl-001.jpg",
+      "fitment": [
+        {
+          "make": "Nissan",
+          "model": "350Z"
+        }
+      ],
       "short": "30-way damping, camber-adjustable top mounts, 8k/6k springs",
       "description": "Monotube coilovers built for daily driving with weekend track use. Height-adjustable via the lower bracket so you keep full damper travel at any ride height. Includes pillowball top mounts on the front and a rear helper spring so the wheel stays loaded over bumps.",
-      "specs": { "Spring rates": "8 kg/mm front, 6 kg/mm rear", "Damping": "30-way adjustable", "Top mounts": "Camber-adjustable pillowball (front)", "Warranty": "2 years" }
+      "specs": {
+        "Spring rates": "8 kg/mm front, 6 kg/mm rear",
+        "Damping": "30-way adjustable",
+        "Top mounts": "Camber-adjustable pillowball (front)",
+        "Warranty": "2 years"
+      }
     },
     {
       "id": "sdx-cl-002",
@@ -39,11 +110,25 @@
       "category": "suspension",
       "price": 899,
       "stock": 4,
-      "image": "images/coilover.svg",
-      "fitment": [{ "make": "Nissan", "model": "Silvia S15" }, { "make": "Nissan", "model": "Skyline R34" }],
+      "image": "images/sdx-cl-002.jpg",
+      "fitment": [
+        {
+          "make": "Nissan",
+          "model": "Silvia S15"
+        },
+        {
+          "make": "Nissan",
+          "model": "Skyline R34"
+        }
+      ],
       "short": "10k/8k springs, extended-travel rears, inverted front dampers",
       "description": "Set up for drifting from the box: stiff front end for turn-in, softer rear for grip on exit. Inverted front dampers take the side loads from steering lock so the seals last.",
-      "specs": { "Spring rates": "10 kg/mm front, 8 kg/mm rear", "Damping": "32-way adjustable", "Front dampers": "Inverted monotube", "Warranty": "2 years" }
+      "specs": {
+        "Spring rates": "10 kg/mm front, 8 kg/mm rear",
+        "Damping": "32-way adjustable",
+        "Front dampers": "Inverted monotube",
+        "Warranty": "2 years"
+      }
     },
     {
       "id": "sdx-cl-003",
@@ -53,11 +138,25 @@
       "category": "suspension",
       "price": 699,
       "stock": 9,
-      "image": "images/coilover.svg",
-      "fitment": [{ "make": "BMW", "model": "E46 3 Series" }, { "make": "BMW", "model": "E36 3 Series" }],
+      "image": "images/sdx-cl-003.jpg",
+      "fitment": [
+        {
+          "make": "BMW",
+          "model": "E46 3 Series"
+        },
+        {
+          "make": "BMW",
+          "model": "E36 3 Series"
+        }
+      ],
       "short": "Road-biased setup, 7k/5k springs, separate height and preload",
       "description": "Comfortable enough to commute on, firm enough that the car stops rolling through roundabouts. Separate height and preload adjustment means lowering the car doesn't stiffen the spring.",
-      "specs": { "Spring rates": "7 kg/mm front, 5 kg/mm rear", "Damping": "24-way adjustable", "Lowering range": "20 to 70 mm", "Warranty": "2 years" }
+      "specs": {
+        "Spring rates": "7 kg/mm front, 5 kg/mm rear",
+        "Damping": "24-way adjustable",
+        "Lowering range": "20 to 70 mm",
+        "Warranty": "2 years"
+      }
     },
     {
       "id": "kmo-ex-001",
@@ -67,11 +166,21 @@
       "category": "exhaust",
       "price": 645,
       "stock": 3,
-      "image": "images/exhaust.svg",
-      "fitment": [{ "make": "Toyota", "model": "GT86" }],
+      "image": "images/kmo-ex-001.jpg",
+      "fitment": [
+        {
+          "make": "Toyota",
+          "model": "GT86"
+        }
+      ],
       "short": "76 mm T304 stainless, twin 100 mm tips, no drone at motorway speed",
       "description": "Full stainless system from the catalytic converter back. Resonated centre section keeps the cabin quiet at 70 mph while the rear silencer is straight-through for a clean note on throttle.",
-      "specs": { "Pipe diameter": "76 mm", "Material": "T304 stainless steel", "Tips": "Twin 100 mm slash-cut", "Weight saving": "4.2 kg over stock" }
+      "specs": {
+        "Pipe diameter": "76 mm",
+        "Material": "T304 stainless steel",
+        "Tips": "Twin 100 mm slash-cut",
+        "Weight saving": "4.2 kg over stock"
+      }
     },
     {
       "id": "kmo-ex-002",
@@ -81,11 +190,21 @@
       "category": "exhaust",
       "price": 389,
       "stock": 5,
-      "image": "images/exhaust.svg",
-      "fitment": [{ "make": "Nissan", "model": "Silvia S15" }],
+      "image": "images/kmo-ex-002.jpg",
+      "fitment": [
+        {
+          "make": "Nissan",
+          "model": "Silvia S15"
+        }
+      ],
       "short": "Equal-length 4-1 for SR20DET, T25/T28 flange, 42 mm runners",
       "description": "Equal-length runners so all four cylinders reach the turbine at the same time, which is what you feel as quicker spool. Thick 10 mm flanges to resist warping under heat cycles.",
-      "specs": { "Design": "Equal-length 4-1", "Runner diameter": "42 mm", "Turbo flange": "T25 / T28", "Material": "SUS304 stainless" }
+      "specs": {
+        "Design": "Equal-length 4-1",
+        "Runner diameter": "42 mm",
+        "Turbo flange": "T25 / T28",
+        "Material": "SUS304 stainless"
+      }
     },
     {
       "id": "sdx-ex-003",
@@ -95,11 +214,21 @@
       "category": "exhaust",
       "price": 129,
       "stock": 14,
-      "image": "images/exhaust.svg",
-      "fitment": [{ "make": "BMW", "model": "E36 3 Series" }],
+      "image": "images/sdx-ex-003.jpg",
+      "fitment": [
+        {
+          "make": "BMW",
+          "model": "E36 3 Series"
+        }
+      ],
       "short": "Direct replacement for the OE cat, 63 mm bore, lambda boss included",
       "description": "Straight pipe replacing the catalytic converter. For off-road and track use only: it will not pass a UK MOT emissions test.",
-      "specs": { "Bore": "63 mm", "Sensor bosses": "1 x M18 lambda", "Material": "T304 stainless", "Use": "Track only" }
+      "specs": {
+        "Bore": "63 mm",
+        "Sensor bosses": "1 x M18 lambda",
+        "Material": "T304 stainless",
+        "Use": "Track only"
+      }
     },
     {
       "id": "brk-bk-001",
@@ -109,11 +238,25 @@
       "category": "brakes",
       "price": 1895,
       "stock": 2,
-      "image": "images/brake-kit.svg",
-      "fitment": [{ "make": "Nissan", "model": "350Z" }, { "make": "Nissan", "model": "Skyline R34" }],
+      "image": "images/brk-bk-001.jpg",
+      "fitment": [
+        {
+          "make": "Nissan",
+          "model": "350Z"
+        },
+        {
+          "make": "Nissan",
+          "model": "Skyline R34"
+        }
+      ],
       "short": "356 mm two-piece discs, forged monoblock calipers, braided lines",
       "description": "Front kit for cars that see track days. Two-piece floating discs shed heat faster than solid discs and weigh less. Calipers are machined from a single billet so they don't flex under a hard stop.",
-      "specs": { "Disc size": "356 x 32 mm", "Calipers": "6-piston forged monoblock", "Minimum wheel": "18 inch", "Includes": "Pads, braided lines, brackets" }
+      "specs": {
+        "Disc size": "356 x 32 mm",
+        "Calipers": "6-piston forged monoblock",
+        "Minimum wheel": "18 inch",
+        "Includes": "Pads, braided lines, brackets"
+      }
     },
     {
       "id": "brk-pd-002",
@@ -123,11 +266,25 @@
       "category": "brakes",
       "price": 119,
       "stock": 22,
-      "image": "images/brake-kit.svg",
-      "fitment": [{ "make": "Toyota", "model": "GT86" }, { "make": "Mazda", "model": "MX-5 NC" }],
+      "image": "images/brk-pd-002.jpg",
+      "fitment": [
+        {
+          "make": "Toyota",
+          "model": "GT86"
+        },
+        {
+          "make": "Mazda",
+          "model": "MX-5 NC"
+        }
+      ],
       "short": "Semi-metallic compound, works from cold, 650 C fade limit",
       "description": "A pad that bites from the first corner and keeps biting after twenty laps. Dustier than road pads, so expect to clean your wheels.",
-      "specs": { "Compound": "Semi-metallic", "Operating range": "0 to 650 C", "Friction": "0.52 average", "Position": "Front axle" }
+      "specs": {
+        "Compound": "Semi-metallic",
+        "Operating range": "0 to 650 C",
+        "Friction": "0.52 average",
+        "Position": "Front axle"
+      }
     },
     {
       "id": "brk-ln-003",
@@ -138,10 +295,24 @@
       "price": 69,
       "stock": 30,
       "image": "images/brake-kit.svg",
-      "fitment": [{ "make": "BMW", "model": "E46 3 Series" }, { "make": "BMW", "model": "E90 3 Series" }],
+      "fitment": [
+        {
+          "make": "BMW",
+          "model": "E46 3 Series"
+        },
+        {
+          "make": "BMW",
+          "model": "E90 3 Series"
+        }
+      ],
       "short": "Stainless braided, PVC coated, four lines with fittings",
       "description": "Replaces the rubber flexi hoses that swell under pressure. Firmer pedal and more consistent feel, especially once the fluid is hot.",
-      "specs": { "Lines": "4 (two per axle)", "Construction": "PTFE core, stainless braid, PVC coat", "Approval": "TUV", "Fittings": "Zinc-plated steel" }
+      "specs": {
+        "Lines": "4 (two per axle)",
+        "Construction": "PTFE core, stainless braid, PVC coat",
+        "Approval": "TUV",
+        "Fittings": "Zinc-plated steel"
+      }
     },
     {
       "id": "whl-001",
@@ -151,11 +322,30 @@
       "category": "wheels",
       "price": 245,
       "stock": 12,
-      "image": "images/wheel.svg",
-      "fitment": [{ "make": "Nissan", "model": "350Z" }, { "make": "Toyota", "model": "GT86" }, { "make": "Nissan", "model": "Silvia S15" }],
+      "image": "images/whl-001.jpg",
+      "fitment": [
+        {
+          "make": "Nissan",
+          "model": "350Z"
+        },
+        {
+          "make": "Toyota",
+          "model": "GT86"
+        },
+        {
+          "make": "Nissan",
+          "model": "Silvia S15"
+        }
+      ],
       "short": "Flow-formed, 5x114.3, ET22, 9.1 kg, price per wheel",
       "description": "Flow-formed barrel gives close to forged strength at a cast price. Concave six-spoke face with a deep lip on the 9.5-inch width.",
-      "specs": { "Size": "18 x 9.5 J", "PCD": "5 x 114.3", "Offset": "ET22", "Weight": "9.1 kg", "Sold": "Per wheel" }
+      "specs": {
+        "Size": "18 x 9.5 J",
+        "PCD": "5 x 114.3",
+        "Offset": "ET22",
+        "Weight": "9.1 kg",
+        "Sold": "Per wheel"
+      }
     },
     {
       "id": "whl-002",
@@ -165,11 +355,30 @@
       "category": "wheels",
       "price": 219,
       "stock": 16,
-      "image": "images/wheel.svg",
-      "fitment": [{ "make": "BMW", "model": "E36 3 Series" }, { "make": "BMW", "model": "E46 3 Series" }, { "make": "Mazda", "model": "MX-5 NC" }],
+      "image": "images/whl-002.jpg",
+      "fitment": [
+        {
+          "make": "BMW",
+          "model": "E36 3 Series"
+        },
+        {
+          "make": "BMW",
+          "model": "E46 3 Series"
+        },
+        {
+          "make": "Mazda",
+          "model": "MX-5 NC"
+        }
+      ],
       "short": "Flow-formed, 5x120 or 5x114.3, ET25, 8.4 kg, price per wheel",
       "description": "The 17-inch version of the FF-6 for cars that want tyre sidewall. Same flow-formed construction and same face.",
-      "specs": { "Size": "17 x 9 J", "PCD": "5 x 120 or 5 x 114.3", "Offset": "ET25", "Weight": "8.4 kg", "Sold": "Per wheel" }
+      "specs": {
+        "Size": "17 x 9 J",
+        "PCD": "5 x 120 or 5 x 114.3",
+        "Offset": "ET25",
+        "Weight": "8.4 kg",
+        "Sold": "Per wheel"
+      }
     },
     {
       "id": "eng-in-001",
@@ -179,11 +388,25 @@
       "category": "engine",
       "price": 189,
       "stock": 8,
-      "image": "images/intake.svg",
-      "fitment": [{ "make": "Honda", "model": "Civic EK" }, { "make": "Honda", "model": "S2000" }],
+      "image": "images/eng-in-001.jpg",
+      "fitment": [
+        {
+          "make": "Honda",
+          "model": "Civic EK"
+        },
+        {
+          "make": "Honda",
+          "model": "S2000"
+        }
+      ],
       "short": "Mandrel-bent aluminium, heat shield, dry cone filter",
       "description": "Moves the filter out of the engine bay heat and gives the engine a smoother path to the throttle body. Dry filter means no oiling and no risk of fouling the MAF sensor.",
-      "specs": { "Tube": "76 mm mandrel-bent aluminium", "Filter": "Dry synthetic cone", "Heat shield": "Included", "Fitting time": "45 minutes" }
+      "specs": {
+        "Tube": "76 mm mandrel-bent aluminium",
+        "Filter": "Dry synthetic cone",
+        "Heat shield": "Included",
+        "Fitting time": "45 minutes"
+      }
     },
     {
       "id": "eng-ic-002",
@@ -193,11 +416,25 @@
       "category": "engine",
       "price": 429,
       "stock": 3,
-      "image": "images/intake.svg",
-      "fitment": [{ "make": "Nissan", "model": "Silvia S15" }, { "make": "Nissan", "model": "Skyline R34" }],
+      "image": "images/eng-ic-002.jpg",
+      "fitment": [
+        {
+          "make": "Nissan",
+          "model": "Silvia S15"
+        },
+        {
+          "make": "Nissan",
+          "model": "Skyline R34"
+        }
+      ],
       "short": "600x300x76 mm bar-and-plate core, full pipe kit, silicone couplers",
       "description": "Drops intake temperatures by around 25 C on a stock turbo. Bar-and-plate core is heavier than tube-and-fin but far tougher against stone strikes.",
-      "specs": { "Core": "600 x 300 x 76 mm", "Construction": "Bar and plate", "Inlet / outlet": "63 mm", "Includes": "Piping, couplers, clamps" }
+      "specs": {
+        "Core": "600 x 300 x 76 mm",
+        "Construction": "Bar and plate",
+        "Inlet / outlet": "63 mm",
+        "Includes": "Piping, couplers, clamps"
+      }
     },
     {
       "id": "drv-cl-001",
@@ -207,11 +444,25 @@
       "category": "drivetrain",
       "price": 385,
       "stock": 5,
-      "image": "images/clutch.svg",
-      "fitment": [{ "make": "Nissan", "model": "Silvia S15" }, { "make": "Nissan", "model": "350Z" }],
+      "image": "images/drv-cl-001.jpg",
+      "fitment": [
+        {
+          "make": "Nissan",
+          "model": "Silvia S15"
+        },
+        {
+          "make": "Nissan",
+          "model": "350Z"
+        }
+      ],
       "short": "Organic sprung disc, 30% stronger pressure plate, rated to 400 Nm",
       "description": "Holds more torque than stock without a heavy pedal. Organic friction material means it drives like a normal car in traffic.",
-      "specs": { "Torque rating": "400 Nm", "Disc": "Organic, sprung hub", "Pressure plate": "+30% clamp load", "Includes": "Release bearing, alignment tool" }
+      "specs": {
+        "Torque rating": "400 Nm",
+        "Disc": "Organic, sprung hub",
+        "Pressure plate": "+30% clamp load",
+        "Includes": "Release bearing, alignment tool"
+      }
     },
     {
       "id": "drv-df-002",
@@ -221,11 +472,25 @@
       "category": "drivetrain",
       "price": 895,
       "stock": 2,
-      "image": "images/diff.svg",
-      "fitment": [{ "make": "BMW", "model": "E36 3 Series" }, { "make": "BMW", "model": "E46 3 Series" }],
+      "image": "images/drv-df-002.jpg",
+      "fitment": [
+        {
+          "make": "BMW",
+          "model": "E36 3 Series"
+        },
+        {
+          "make": "BMW",
+          "model": "E46 3 Series"
+        }
+      ],
       "short": "Clutch-type, 2-way, drop-in for 188 mm medium case",
       "description": "Locks under both acceleration and braking, which is what you want for drifting: both rear wheels spin together and the car stays predictable on entry. Not ideal for a daily driver.",
-      "specs": { "Type": "Clutch-type, 2-way", "Case": "188 mm medium", "Lock": "Adjustable via ramp angle", "Requires": "Setup by a specialist" }
+      "specs": {
+        "Type": "Clutch-type, 2-way",
+        "Case": "188 mm medium",
+        "Lock": "Adjustable via ramp angle",
+        "Requires": "Setup by a specialist"
+      }
     },
     {
       "id": "ext-bk-001",
@@ -235,11 +500,21 @@
       "category": "exterior",
       "price": 449,
       "stock": 4,
-      "image": "images/bodykit.svg",
-      "fitment": [{ "make": "Nissan", "model": "350Z" }],
+      "image": "images/ext-bk-001.jpg",
+      "fitment": [
+        {
+          "make": "Nissan",
+          "model": "350Z"
+        }
+      ],
       "short": "Polyurethane, unpainted, larger intake for front-mount intercooler",
       "description": "Flexible polyurethane so it survives a kerb tap without cracking. The centre opening is sized for a 600 mm intercooler core.",
-      "specs": { "Material": "Polyurethane", "Finish": "Unpainted, primed", "Fitting": "OE mounting points", "Includes": "Mesh grille" }
+      "specs": {
+        "Material": "Polyurethane",
+        "Finish": "Unpainted, primed",
+        "Fitting": "OE mounting points",
+        "Includes": "Mesh grille"
+      }
     },
     {
       "id": "ext-sp-002",
@@ -249,11 +524,25 @@
       "category": "exterior",
       "price": 325,
       "stock": 6,
-      "image": "images/bodykit.svg",
-      "fitment": [{ "make": "Toyota", "model": "GT86" }, { "make": "Honda", "model": "S2000" }],
+      "image": "images/ext-sp-002.jpg",
+      "fitment": [
+        {
+          "make": "Toyota",
+          "model": "GT86"
+        },
+        {
+          "make": "Honda",
+          "model": "S2000"
+        }
+      ],
       "short": "1500 mm carbon fibre blade, adjustable angle, chassis-mount uprights",
       "description": "Mounts through the boot floor to the chassis so the downforce goes into the car, not the boot lid. Angle adjustable in 3 degree steps.",
-      "specs": { "Blade": "1500 mm carbon fibre", "Uprights": "Aluminium, chassis mount", "Angle": "0 to 12 degrees", "Finish": "Gloss clear coat" }
+      "specs": {
+        "Blade": "1500 mm carbon fibre",
+        "Uprights": "Aluminium, chassis mount",
+        "Angle": "0 to 12 degrees",
+        "Finish": "Gloss clear coat"
+      }
     }
   ]
 }
