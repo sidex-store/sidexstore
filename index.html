@@ -172,7 +172,7 @@
 </head>
 <body>
 
-<div class="topline"><div class="wrap"><span>Free UK delivery over £150</span><span>Test store: no real orders are taken</span></div></div>
+<div class="topline"><div class="wrap"><span>Free delivery over $150</span></div></div>
 
 <header class="main">
   <div class="wrap">
@@ -204,6 +204,7 @@
       <a href="#/">Returns</a>
       <a href="#/">Fitting guides</a>
       <a href="#/">Contact</a>
+      <a href="#/about">About us</a>
     </div>
   </div>
 </footer>
@@ -227,7 +228,7 @@
   const app = document.getElementById('app');
   let DATA = null;
   const cart = new Map(); // id -> qty (in memory for the session)
-  const fmt = n => '£' + n.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const fmt = n => '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
   const FREE_DELIVERY_OVER = 150, DELIVERY = 6.95;
@@ -243,7 +244,7 @@
 
   function renderNav() {
     const nav = document.querySelector('#catNav .wrap');
-    nav.innerHTML = `<a href="#/">Home</a>` + DATA.categories.map(c => `<a href="#/category/${c.slug}" data-cat="${c.slug}">${esc(c.name)}</a>`).join('');
+    nav.innerHTML = `<a href="#/">Home</a>` + DATA.categories.map(c => `<a href="#/category/${c.slug}" data-cat="${c.slug}">${esc(c.name)}</a>`).join('') + `<a href="#/about">About</a>`;
     document.getElementById('footCats').innerHTML = DATA.categories.map(c => `<a href="#/category/${c.slug}">${esc(c.name)}</a>`).join('');
   }
 
@@ -258,6 +259,7 @@
     if (view === 'car') return renderCatalogue({ make: a, model: b });
     if (view === 'search') return renderCatalogue({ q: a });
     if (view === 'thanks') return renderThanks();
+    if (view === 'about') return renderAbout();
     renderHome();
   }
   window.addEventListener('hashchange', route);
@@ -390,6 +392,15 @@
     app.querySelector('#qm').onclick = () => q.value = Math.max(1, +q.value - 1);
     app.querySelector('#qp').onclick = () => q.value = Math.min(p.stock, +q.value + 1);
     app.querySelector('#addBtn').onclick = () => add(p.id, Math.max(1, Math.min(p.stock, +q.value || 1)));
+  }
+
+  function renderAbout() {
+    app.innerHTML = `<div class="wrap" style="padding:48px 0 60px;max-width:720px">
+      <h1>About Sidex</h1>
+      <p style="font-size:18px;color:var(--ink-2);margin-top:16px">SIDEX is a store selling performance parts for super cars. Every part we list is checked against the exact cars it fits, so what arrives is what bolts on: suspension, exhausts, brakes, wheels, engine and drivetrain upgrades from brands built for the track.</p>
+      <p style="color:var(--ink-2)">Sidex is a demonstration store; the brands, parts and prices are fictional.</p>
+      <a class="btn" href="#/">Shop parts</a>
+    </div>`;
   }
 
   function renderThanks() {
